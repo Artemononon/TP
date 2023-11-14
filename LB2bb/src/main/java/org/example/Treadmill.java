@@ -1,22 +1,21 @@
 package org.example;
 
 public class Treadmill implements Obstacle {
-    int dist;
-
-    Treadmill(int dist) {
-        this.dist = dist;
+    private final int dist;
+    public Treadmill(TreadmillL dor) {
+        this.dist = dor.getVal();
     }
     @Override
     public boolean isCan(Member member)
     {
         if (member.run(dist))
         {
-            System.out.println(member.getName() + " пробежал");
+            System.out.println(member.getName() + " пробежал " + dist + "м.");
             return true;
         }
         else
         {
-            System.out.println(member.getName() + " не пробежал");
+            System.out.println(member.getName() + " не пробежал " + dist + "м.");
             return false;
         }
     }

@@ -4,10 +4,10 @@ public interface Member {
 
     default boolean superJump(String name)
     {
-        int extraJumpCount = Main.getExtraJumpCount();
-        if (extraJumpCount > 0) {
-            Main.decrementExtraJumpCount();
-            System.out.println(name + " использовал суперпрыжок. Осталось " + extraJumpCount);
+        int SuperJumpCount = Main.getSuperJump();
+        if (SuperJumpCount >= 0) {
+            Main.decrementSuperJumpCount();
+            System.out.println(name + " использовал суперпрыжок. Осталось " + SuperJumpCount);
             return true;
         }
         else
